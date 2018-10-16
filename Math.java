@@ -1,19 +1,25 @@
 
+
 /**
  * Write a description of class Math here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Monika Szucs
+ * @version October 15th 2018
  */
 public class Math
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int     x;
     private int     y;
+    
+    //static instance variable
     private static String  operation = "%";
 
     /**
      * Constructor for objects of class Math
+     * 
+     * @param x takes the value entered by the user for x
+     * @param y takes the valye entered by the user for y
      */
     public Math(int x, int y)
     {
@@ -23,10 +29,11 @@ public class Math
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * method
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param   x   a parameter for the method
+     * @param   y   a parameter for the method
+     * @return x/y or 0 as long as y is not zero then a number will return
      */
     public int divide(int x, int y)
     {
@@ -39,7 +46,14 @@ public class Math
             return x/y;
         }
     }
-
+    
+    /**
+     * method
+     *
+     * @param   x   a parameter for the method
+     * @param   y   a parameter for the method
+     * @return  x or y if x is greater then y then return x else return y
+     */
     public int max(int x, int y)
     {
         // put your code here
@@ -50,34 +64,46 @@ public class Math
             return y;
         }
     }
-
+    
+    /**
+     * method
+     *
+     * @param   x   a parameter for the method
+     * @param   y   a parameter for the method
+     * @return  0 or remainder if yis zero then a print error and 0, else if remainder is greater then zero then return remainder, else return 0
+     */
     public int remainder(int x, int y)
     {
         // put your code here
-        int num = x/y;
-        int remainder = x%y;
-
+        
         if(y==0){
-            System.out.print("y cannot be 0");
+            System.out.print("ERROR y cannot be 0");
             return 0;
         }
-        if(remainder>0){
-            System.out.println("Remainder: " + remainder);
+        else {
+            int remainder = x%y;
             return remainder;
         }
-        else{
-            System.out.println("Other:" + 0);
-            return 0;
-        }
     }
-
+    
+    /**
+     * method
+     *
+     * @param   x   a parameter for the method
+     * @return  x multiplied by three
+     */
     public int triple(int x)
     {
         // put your code here
-        System.out.println(x*3);
         return x*3;
     }
 
+    /**
+     * method
+     *
+     * @param   operation a paramter for a method
+     * @return  boolean either true or false checking to see if the operation selections have been matched in a switch statement
+     */
     public boolean isValidOperation(String operation){
         switch(operation){
             case "*":
